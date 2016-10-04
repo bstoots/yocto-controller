@@ -1,0 +1,12 @@
+{
+    "name": "bstoots/yocto-controller",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Brian Stoots",
+            "email": "bstoots@gmail.com"
+        }
+    ],
+    "require": {}
+}
