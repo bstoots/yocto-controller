@@ -19,12 +19,20 @@ abstract class Psr7Controller {
   }
   
   /**
-   * Every controller is required to handle an HTTP message in some way
+   * Every controller is required to handle an HTTP message in some way.
+   * This call is the last stop so to speak before the response is returned to the user.
+   *
+   * @param void
+   * @return void
    */
   abstract public function handle();
   
   /**
-   * 
+   * Helper function that takes care of sending response headers and body data.
+   * This is most often called inside handle().
+   *
+   * @param Psr\Http\Message\ResponseInterface $response
+   * @return void
    */
   protected function respond(ResponseInterface $response) {
     // Special case HTTP header first
