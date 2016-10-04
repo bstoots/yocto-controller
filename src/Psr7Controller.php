@@ -2,6 +2,7 @@
 
 namespace Bstoots\YoctoController;
 use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
 
 abstract class Psr7Controller {
 
@@ -21,5 +22,19 @@ abstract class Psr7Controller {
    * Every controller is required to handle an HTTP message in some way
    */
   abstract public function handle();
+  
+  /**
+   * 
+   */
+  protected function respond(ResponseInterface $response) {
+    // Special case HTTP header first
+    header("HTTP/".$response->getProtocolVersion()." ".$response->getStatusCode()." ".$response->getReasonPhrase());
+    // Then the rest of the headers
+    foreach ($response->getHeaders() as $field => $value) {
+      header($field.': '.$value[0]);
+    }
+    // Lastly the body
+    echo $response->getBody();
+  }
   
 }
