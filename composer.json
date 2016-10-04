@@ -1,12 +1,27 @@
 {
-    "name": "bstoots/yocto-controller",
-    "type": "library",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Brian Stoots",
-            "email": "bstoots@gmail.com"
-        }
-    ],
-    "require": {}
+  "name": "bstoots/yocto-controller",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Brian Stoots",
+      "email": "bstoots@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Bstoots\\YoctoController\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Bstoots\\YoctoController\\Test\\": "test/"
+    }
+  },
+  "require": {
+    "psr/http-message": "^1.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "5.5.*"
+  }
 }
