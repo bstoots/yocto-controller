@@ -1,10 +1,9 @@
 <?php
 
 namespace Bstoots\YoctoController\Test;
-use PHPUnit\Framework\TestCase;
 use Bstoots\YoctoController\FastRouteController;
 
-class FastRouteControllerTest extends TestCase {
+class FastRouteControllerTest extends \PHPUnit_Framework_TestCase {
   
   /**
    * @dataProvider setRouteDataSuccessProvider()
